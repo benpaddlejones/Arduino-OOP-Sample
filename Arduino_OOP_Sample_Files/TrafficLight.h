@@ -11,10 +11,10 @@ class TrafficLight
 {
 private:
   Led redLED;
-  Led &amberLED;
+  Led amberLED;
   LedBlinker amberBlinker;
   Led greenLED;
-  Button &theButton;
+  Button theButton;
   Potentiometer thePot;
 
   byte ledBrightness;
@@ -38,7 +38,7 @@ private:
   void updateLedBrightness();
   
 public:
-  TrafficLight() {};  // do not use
+ // TrafficLight() {};  // do not use
   TrafficLight (Led &redLED, Led &amberLED, Led &greenLED, LedBlinker &amberBlinker, Button &theButton, Potentiometer &thePot);
   
   void init();

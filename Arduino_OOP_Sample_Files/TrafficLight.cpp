@@ -1,4 +1,3 @@
-
 #include "TrafficLight.h"
 
 TrafficLight::TrafficLight (Led &redLED, Led &amberLED, Led &greenLED, LedBlinker &amberBlinker, Button &theButton, Potentiometer &thePot)
