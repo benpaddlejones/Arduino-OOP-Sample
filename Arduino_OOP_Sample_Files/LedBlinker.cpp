@@ -24,6 +24,11 @@ void LedBlinker::toggleLed()
   led.toggle();
 }
 
+void LedBlinker::toggleLed(byte val)
+{
+  led.toggle(val);
+}
+
 void LedBlinker::update()
 {
   unsigned long timeNow = millis();
@@ -31,5 +36,15 @@ void LedBlinker::update()
   {
     lastTimeBlinked = timeNow;
     toggleLed();
+  }
+}
+
+void LedBlinker::update(byte val)
+{
+  unsigned long timeNow = millis();
+  if (timeNow - lastTimeBlinked > blinkDelay) 
+  {
+    lastTimeBlinked = timeNow;
+    toggleLed(val);
   }
 }

@@ -12,6 +12,7 @@ private:
   unsigned long blinkDelay;
   
   void toggleLed();
+  void toggleLed(byte val);
 
 public:
   LedBlinker() {} // do not use
@@ -21,7 +22,7 @@ public:
   void initLed();
 
   void update();
-  
+  void update(byte val);
 };
 
 #endif

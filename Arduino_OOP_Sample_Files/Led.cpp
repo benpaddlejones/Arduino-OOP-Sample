@@ -29,6 +29,12 @@ void Led::on()
   digitalWrite(pin, state);
 }
 
+void Led::on(byte val)
+{
+  state = HIGH;
+  analogWrite(pin, val);
+}
+
 void Led::off()
 {
   state = LOW;
@@ -41,6 +47,15 @@ void Led::toggle()
     off();
   } else {
     on();
+  }
+}
+
+void Led::toggle(byte val)
+{
+  if (isPoweredOn()) {
+    off();
+  } else {
+    on(val);
   }
 }
 

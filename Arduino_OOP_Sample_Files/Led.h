@@ -15,10 +15,12 @@ public:
   
   void init();
   void init(byte defaultState);
-  void on ();
-  void off ();
-  bool isPoweredOn ();
-  void toggle ();
+  void on();
+  void on(byte val);
+  void off();
+  bool isPoweredOn();
+  void toggle();
+  void toggle(byte val);
 };
 
 

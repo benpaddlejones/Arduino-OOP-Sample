@@ -15,23 +15,21 @@ void TrafficLight::init()
   redLED.init();
   amberLED.init();
   greenLED.init();
-  //thePot.init();
   delay(100);
-  
   state = STATE_RED;
   theButton.init();
 }
 
 void TrafficLight::RED()
 {
-  redLED.on();
+  redLED.on(thePot.readState());
   amberLED.off();
   greenLED.off();
 }
 
 void TrafficLight::AMBER()
 {
-  redLED.on();
+  redLED.off();
   amberBlinker.update();
   greenLED.off();
 }
@@ -40,7 +38,7 @@ void TrafficLight::GREEN()
 {
   redLED.off();
   amberLED.off();
-  greenLED.on();
+  greenLED.on(thePot.readState());
 }
 
 void TrafficLight::AllOff()
